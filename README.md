@@ -1,86 +1,86 @@
-# ?? Arkanoid w Logisim
+# ğŸ® Arkanoid w Logisim
 
-## ?? Opis projektu
+## ğŸ§  Opis projektu
 
-Celem projektu by³o odtworzenie klasycznej gry **Arkanoid** w œrodowisku **Logisim**, z zachowaniem jak najwiêkszej liczby funkcji orygina³u. Gracz steruje paletk¹, odbija pi³kê i rozbija bloczki, zdobywaj¹c punkty. Gra koñczy siê zwyciêstwem po zdobyciu okreœlonej liczby punktów lub zbiciu wszystkich bloczków, albo pora¿k¹ po utracie pi³ki.
-
----
-
-## ?? Technologie
-
-- ?? **Logisim** – g³ówne œrodowisko projektowe  
-- ?? Obs³uga klawiatury – sterowanie gr¹ przyciskami `a` (lewo) i `d` (prawo)  
-- ?? Uk³ady logiczne – ROM, RAM, dekodery, multipleksery, liczniki, komparatory  
+Celem projektu byÅ‚o odtworzenie klasycznej gry **Arkanoid** w Å›rodowisku **Logisim**, z zachowaniem jak najwiÄ™kszej liczby funkcji oryginaÅ‚u. Gracz steruje paletkÄ…, odbija piÅ‚kÄ™ i rozbija bloczki, zdobywajÄ…c punkty. Gra koÅ„czy siÄ™ zwyciÄ™stwem po zdobyciu okreÅ›lonej liczby punktÃ³w lub zbiciu wszystkich bloczkÃ³w, albo poraÅ¼kÄ… po utracie piÅ‚ki.
 
 ---
 
-## ??? Zasady gry
-1. Naciœnij `START`, aby rozpocz¹æ grê.
-2. Steruj paletk¹ za pomoc¹ `a` (lewo) i `d` (prawo).
-3. Odbijaj pi³kê, aby zbiæ bloczki.
-4. Zdob¹dŸ wszystkie punkty lub zbij wszystkie bloczki, aby wygraæ.
-5. Jeœli pi³ka wypadnie poza planszê, przegrywasz.
-6. Mo¿esz rozpocz¹æ grê ponownie, naciskaj¹c `START`.
+## âš™ï¸ Technologie
+
+- ğŸ§° **Logisim** â€“ gÅ‚Ã³wne Å›rodowisko projektowe  
+- âŒ¨ï¸ ObsÅ‚uga klawiatury â€“ sterowanie grÄ… przyciskami `a` (lewo) i `d` (prawo)  
+- ğŸ’¾ UkÅ‚ady logiczne â€“ ROM, RAM, dekodery, multipleksery, liczniki, komparatory  
 
 ---
 
-## ?? Architektura systemu
+## ğŸ•¹ï¸ Zasady gry
+1. NaciÅ›nij `START`, aby rozpoczÄ…Ä‡ grÄ™.
+2. Steruj paletkÄ… za pomocÄ… `a` (lewo) i `d` (prawo).
+3. Odbijaj piÅ‚kÄ™, aby zbiÄ‡ bloczki.
+4. ZdobÄ…dÅº wszystkie punkty lub zbij wszystkie bloczki, aby wygraÄ‡.
+5. JeÅ›li piÅ‚ka wypadnie poza planszÄ™, przegrywasz.
+6. MoÅ¼esz rozpoczÄ…Ä‡ grÄ™ ponownie, naciskajÄ…c `START`.
 
-Projekt jest oparty na zasadach **OOP (Object-Oriented Programming)** – ka¿dy komponent realizuje jedn¹, wyraŸn¹ funkcjonalnoœæ, a mniejsze modu³y s¹ integrowane w wiêksze bloki. G³ówne komponenty:
+---
 
-### ?? Modu³y gry
+## ğŸ“ Architektura systemu
+
+Projekt jest oparty na zasadach **OOP (Object-Oriented Programming)** â€“ kaÅ¼dy komponent realizuje jednÄ…, wyraÅºnÄ… funkcjonalnoÅ›Ä‡, a mniejsze moduÅ‚y sÄ… integrowane w wiÄ™ksze bloki. GÅ‚Ã³wne komponenty:
+
+### ğŸ”¹ ModuÅ‚y gry
 
 | Nazwa | Opis |
 |-------|------|
 | `BALL::SHIFTER` | Przesuwanie paletki w lewo/prawo |
-| `BALL::DECODER` | Pozycjonowanie pi³ki na planszy |
-| `BALL::COLLISION` | Wykrywanie kolizji z paletk¹, œcianami, bloczkami |
-| `BALL::AXIS::X` / `Y` | Odbicia pi³ki i detekcja pozycji |
-| `GAME::STATE` | Wyœwietlanie komunikatów "WIN/LOSE" |
-| `GAME::CONTROLLER` | Odczyt i dekodowanie sygna³ów z klawiatury |
-| `GAME::INIT` | Inicjalizacja gry i status pi³ki |
-| `GAME::BLOCKS` | Obs³uga bloczków i ich eliminacja |
-| `GAME::SCORE::HIGHEST` | Zapamiêtywanie najwy¿szego wyniku |
-| `GAME::SCORE::CONDITION` | Zliczanie punktów i warunki zwyciêstwa |
-| `GAME::START` | OpóŸnione uruchomienie gry |
+| `BALL::DECODER` | Pozycjonowanie piÅ‚ki na planszy |
+| `BALL::COLLISION` | Wykrywanie kolizji z paletkÄ…, Å›cianami, bloczkami |
+| `BALL::AXIS::X` / `Y` | Odbicia piÅ‚ki i detekcja pozycji |
+| `GAME::STATE` | WyÅ›wietlanie komunikatÃ³w "WIN/LOSE" |
+| `GAME::CONTROLLER` | Odczyt i dekodowanie sygnaÅ‚Ã³w z klawiatury |
+| `GAME::INIT` | Inicjalizacja gry i status piÅ‚ki |
+| `GAME::BLOCKS` | ObsÅ‚uga bloczkÃ³w i ich eliminacja |
+| `GAME::SCORE::HIGHEST` | ZapamiÄ™tywanie najwyÅ¼szego wyniku |
+| `GAME::SCORE::CONDITION` | Zliczanie punktÃ³w i warunki zwyciÄ™stwa |
+| `GAME::START` | OpÃ³Åºnione uruchomienie gry |
 | `BOARD::CONTROLLER` | Centralny kontroler gry |
-| `GAME::SYSTEM` | Integracja wszystkich modu³ów gry |
-| `UTILITY::DELAY` | Uk³ad opóŸniaj¹cy do synchronizacji sygna³ów |
-| `GAME::WIN::CONDITION` | Zbiór warunków koniecznych do zwyciêstwa |
+| `GAME::SYSTEM` | Integracja wszystkich moduÅ‚Ã³w gry |
+| `UTILITY::DELAY` | UkÅ‚ad opÃ³ÅºniajÄ…cy do synchronizacji sygnaÅ‚Ã³w |
+| `GAME::WIN::CONDITION` | ZbiÃ³r warunkÃ³w koniecznych do zwyciÄ™stwa |
 
 ---
 
-## ? Zrealizowane funkcje
+## âœ… Zrealizowane funkcje
 
-- Odbijanie pi³ki i interakcja z bloczkami
-- Wyœwietlacz planszy z dynamiczn¹ grafik¹
-- Detekcja zwyciêstwa i przegranej
-- Zliczanie punktów i rejestrowanie najlepszego wyniku
-- Obs³uga restartu gry i blokada wielokrotnego uruchamiania
-- Sterowanie za pomoc¹ klawiatury (`a` i `d`)
-
----
-
-## ? Niezrealizowane funkcje
-
-- Brak pe³nej eliminacji zbitych bloczków (mo¿liwe ponowne trafienie)
-- Brak dynamicznej zmiany liczby punktów wymaganych do wygranej
+- Odbijanie piÅ‚ki i interakcja z bloczkami
+- WyÅ›wietlacz planszy z dynamicznÄ… grafikÄ…
+- Detekcja zwyciÄ™stwa i przegranej
+- Zliczanie punktÃ³w i rejestrowanie najlepszego wyniku
+- ObsÅ‚uga restartu gry i blokada wielokrotnego uruchamiania
+- Sterowanie za pomocÄ… klawiatury (`a` i `d`)
 
 ---
 
-## ?? Mo¿liwoœci rozwoju
+## âŒ Niezrealizowane funkcje
+
+- Brak peÅ‚nej eliminacji zbitych bloczkÃ³w (moÅ¼liwe ponowne trafienie)
+- Brak dynamicznej zmiany liczby punktÃ³w wymaganych do wygranej
+
+---
+
+## ğŸ”® MoÅ¼liwoÅ›ci rozwoju
 
 - Port projektu do **Logisim Evolution**
-- Dodanie efektów dŸwiêkowych
-- Dynamiczne zmiany prêdkoœci pi³ki
+- Dodanie efektÃ³w dÅºwiÄ™kowych
+- Dynamiczne zmiany prÄ™dkoÅ›ci piÅ‚ki
 - Zmienny rozmiar planszy i paletki
-- Poprawa obs³ugi zbicia wszystkich bloczków
+- Poprawa obsÅ‚ugi zbicia wszystkich bloczkÃ³w
 
 ---
 
-## ?? Uruchamianie projektu
+## ğŸ Uruchamianie projektu
 
-1. Otwórz plik `.circ` w programie **Logisim**.
-2. Naciœnij przycisk `START`, aby rozpocz¹æ rozgrywkê.
-3. U¿yj klawiszy `a` i `d`, aby sterowaæ paletk¹.
+1. OtwÃ³rz plik `.circ` w programie **Logisim**.
+2. NaciÅ›nij przycisk `START`, aby rozpoczÄ…Ä‡ rozgrywkÄ™.
+3. UÅ¼yj klawiszy `a` i `d`, aby sterowaÄ‡ paletkÄ….
 4. Obserwuj wynik oraz komunikaty "WIN/LOSE".
